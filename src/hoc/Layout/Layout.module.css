@@ -9,3 +9,8 @@
     flex-direction: column;
     flex-grow: 1;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
