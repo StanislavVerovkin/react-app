@@ -16,7 +16,6 @@ class Layout extends Component {
     };
 
     menuCloseHandler = () => {
-        debugger;
         this.setState({
             menu: false
         })
