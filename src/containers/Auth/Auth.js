@@ -60,7 +60,6 @@ class Auth extends Component {
 
         if (validation.required) {
             isValid = value.trim() !== isValid
-
         }
 
         if (validation.email) {

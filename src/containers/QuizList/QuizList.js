@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 
 class QuizList extends Component {
 
-    renderQuizes() {
+    static renderQuizes() {
         return [1, 2, 3].map((quiz, index) => {
             return (
                 <li key={index}>
@@ -24,7 +24,7 @@ class QuizList extends Component {
                 <div>
                     <h1>List of tests</h1>
                     <ul>
-                        {this.renderQuizes()}
+                        {QuizList.renderQuizes()}
                     </ul>
                 </div>
             </div>
