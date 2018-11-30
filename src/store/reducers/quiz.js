@@ -20,37 +20,50 @@ export default function quizReducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_QUIZES_START: {
             return {
-                ...state, loading: true
+                ...state,
+                loading: true
             }
         }
         case FETCH_QUIZES_SUCCESS: {
             return {
-                ...state, loading: false, quizes: action.quizes
+                ...state,
+                loading: false,
+                quizes: action.quizes
             }
         }
         case FETCH_QUIZES_ERROR: {
             return {
-                ...state, loading: false, error: action.error
+                ...state,
+                loading: false,
+                error: action.error
             }
         }
         case FETCH_QUIZ_SUCCESS: {
             return {
-                ...state, loading: false, quiz: action.quiz, error: action.error
+                ...state,
+                loading: false,
+                quiz: action.quiz,
+                error: action.error
             }
         }
         case QUIZ_SET_STATE: {
             return {
-                ...state, answerState: action.answerState, results: action.results
+                ...state,
+                answerState: action.answerState,
+                results: action.results
             }
         }
         case FINISHED_QUIZ: {
             return {
-                ...state, isFinished: true
+                ...state,
+                isFinished: true
             }
         }
         case QUIZ_NEXT_QUESTION: {
             return {
-                ...state, answerState: null, activeQuestion: action.number
+                ...state,
+                answerState: null,
+                activeQuestion: action.number
             }
         }
         case QUIZ_RETRY: {
