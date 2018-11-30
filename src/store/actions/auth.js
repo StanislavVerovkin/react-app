@@ -1,5 +1,5 @@
-import axios from "../../axios/axios-quiz";
-
+import axios from 'axios';
+import {AUTH_SUCCESS} from "./actionTypes";
 
 export function auth(email, password, isLogin) {
     return dispatch => {
@@ -17,8 +17,26 @@ export function auth(email, password, isLogin) {
 
         axios.post(url, authData)
             .then((response) => {
-                console.log(response.data)
+                console.log(response.data);
+
+                const data = response.data;
+                const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000);
+
+                localStorage.setItem('token', data.idToken);
+                localStorage.setItem('userId', data.localId);
+                localStorage.setItem('expirationDate', expirationDate);
+
+                dispatch(authSuccess(data.idToken));
+
             })
-            .catch((error) => console.log(error))
+            .catch((error) => console.log(error));
+    }
+}
+
+
+export function authSuccess(token) {
+    return {
+        type: AUTH_SUCCESS,
+        token
     }
 }

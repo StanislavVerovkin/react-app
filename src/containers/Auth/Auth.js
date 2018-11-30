@@ -4,8 +4,7 @@ import Input from "../../components/UI/Input/Input";
 import classes from './Auth.module.css';
 import is from 'is_js';
 import {connect} from "react-redux";
-import auth from "../../store/reducers/auth";
-
+import {auth} from "../../store/actions/auth";
 
 class Auth extends Component {
 
